@@ -6,19 +6,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import QDate
 import csv
 import os
-
-# id de equipos:
-moldeo = 12
-softrim = 4
-booth = 10
-vinil = 2
-t1xx = 6
-cx483 = 18
-u725 = 1
-kxx = 6
-bt1cg = 5 
-gap_hidder = 2
-otros = 4
+from variables import *
 
 class MaintenanceForm(QWidget):
     def __init__(self):
@@ -32,22 +20,7 @@ class MaintenanceForm(QWidget):
         # Machine type combo box
         self.machine_type_label = QLabel("Select Machine Type:")
         self.machine_type_combo = QComboBox()
-        self.machine_type_combo.addItems([
-        "IMM",
-        "ROBOT",
-        "THERMO",
-        "MAGUIRE",
-        "SOFT-TRIM",
-        "BOOTH",
-        "VINIL",
-        "T1XX",
-        "CX483",
-        "U725",
-        "KXX/KM",
-        "BT1CG/PERFCAR/P708",
-        "GAP HIDDER",
-        "OTROS",
-        ])
+        self.machine_type_combo.addItems([str(equipment) for equipment in EQUIPMENT])
         self.machine_type_combo.currentIndexChanged.connect(self.update_machine_id_combo)
         layout.addWidget(self.machine_type_label, 0, 0)
         layout.addWidget(self.machine_type_combo, 0, 1)
@@ -62,7 +35,7 @@ class MaintenanceForm(QWidget):
         # Technician combo box
         self.technician_label = QLabel("Select Technician:")
         self.technician_combo = QComboBox()
-        self.technician_combo.addItems(["Technician 1", "Technician 2", "Technician 3"])
+        self.technician_combo.addItems([str(tec) for tec in TECS])
         layout.addWidget(self.technician_label, 2, 0)
         layout.addWidget(self.technician_combo, 2, 1)
 
