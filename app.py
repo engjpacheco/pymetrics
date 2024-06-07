@@ -141,7 +141,7 @@ class MaintenanceForm(QWidget):
             self.machine_id_combo.addItems([str(fixture + 1100) for fixture in range(kxx + 1)])
         elif machine_type == "BT1CG/PERFCAR/P708":
             self.machine_id_combo.addItems([str(fixture + 1200) for fixture in range(bt1cg + 1)])
-        elif machine_type == "Gap Hidder":
+        elif machine_type == "GAP HIDDER":
             self.machine_id_combo.addItems([str(fixture + 1300) for fixture in range(gap_hidder + 1)])
         elif machine_type == "OTROS":
             self.machine_id_combo.addItems([str(fixture + 1400) for fixture in range(otros + 1)])
