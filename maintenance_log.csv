@@ -1,0 +1,5 @@
+Machine Type,Machine ID,Technician,Date,Work Order Number,Technician Notes,Time Spent (minutes),Downtime (minutes)
+IMM,1000,Technician 1,2024-06-06,12,test,90,90
+ROBOT,2002,Technician 3,2024-06-06,98,este es otro test,50,50
+ROBOT,2003,Technician 3,2024-06-07,,test3,23,23
+THERMO,3003,Technician 3,2024-06-07,568,Some more actions to repair the machine,40,40
