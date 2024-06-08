@@ -1,8 +1,7 @@
 import sys
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QComboBox, QVBoxLayout, 
-    QLineEdit, QTextEdit, QPushButton, QDateEdit, QGridLayout
-)
+    QLineEdit, QTextEdit, QPushButton, QDateEdit, QGridLayout)
 from PyQt5.QtCore import QDate
 import csv
 import os
@@ -12,7 +11,7 @@ class MaintenanceForm(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Maintenance Form")
+        self.setWindowTitle("Summit Planta Leon - Maintenance Form")
         self.setGeometry(100, 100, 400, 400)
 
         layout = QGridLayout()
@@ -91,33 +90,33 @@ class MaintenanceForm(QWidget):
         self.machine_id_combo.clear()
 
         if machine_type == "IMM":
-            self.machine_id_combo.addItems([str(imm + 100) for imm in range(moldeo + 1)])
+            self.machine_id_combo.addItems([str(imm + 100) for imm in range(1, moldeo + 1)])
         elif machine_type == "ROBOT":
-            self.machine_id_combo.addItems([str(robot + 200) for robot in range(moldeo + 1)])
+            self.machine_id_combo.addItems([str(robot + 200) for robot in range(1, moldeo + 1)])
         elif machine_type == "THERMO":
-            self.machine_id_combo.addItems([str(thermo + 300) for thermo in range(moldeo + 1)])
+            self.machine_id_combo.addItems([str(thermo + 300) for thermo in range(1, moldeo + 1)])
         elif machine_type == "MAGUIRE":
-            self.machine_id_combo.addItems([str(maguire + 400) for maguire in range(moldeo + 1)])
+            self.machine_id_combo.addItems([str(maguire + 400) for maguire in range(1, moldeo + 1)])
         elif machine_type == "SOFT-TRIM":
-            self.machine_id_combo.addItems([str(softtrim + 500) for softtrim in range(softrim + 1)])
+            self.machine_id_combo.addItems([str(softtrim + 500) for softtrim in range(1, softrim + 1)])
         elif machine_type == "BOOTH":
-            self.machine_id_combo.addItems([str(booth + 600) for booth in range(booth + 1)])
+            self.machine_id_combo.addItems([str(booth + 600) for booth in range(1, booth + 1)])
         elif machine_type == "VINIL":
-            self.machine_id_combo.addItems([str(vinil + 700) for vinil in range(vinil + 1)])
+            self.machine_id_combo.addItems([str(vinil + 700) for vinil in range(1, vinil + 1)])
         elif machine_type == "T1XX":
-            self.machine_id_combo.addItems([str(t1xx + 800) for t1xx in range(t1xx + 1)])
+            self.machine_id_combo.addItems([str(t1xx + 800) for t1xx in range(1, t1xx + 1)])
         elif machine_type == "CX483":
-            self.machine_id_combo.addItems([str(fixture + 900) for fixture in range(cx483 + 1)])
+            self.machine_id_combo.addItems([str(fixture + 900) for fixture in range(1, cx483 + 1)])
         elif machine_type == "U725":
-            self.machine_id_combo.addItems([str(fixture + 1000) for fixture in range(u725 + 1)])
+            self.machine_id_combo.addItems([str(fixture + 1000) for fixture in range(1, u725 + 1)])
         elif machine_type == "KXX/KM":
-            self.machine_id_combo.addItems([str(fixture + 1100) for fixture in range(kxx + 1)])
+            self.machine_id_combo.addItems([str(fixture + 1100) for fixture in range(1, kxx + 1)])
         elif machine_type == "BT1CG/PERFCAR/P708":
-            self.machine_id_combo.addItems([str(fixture + 1200) for fixture in range(bt1cg + 1)])
+            self.machine_id_combo.addItems([str(fixture + 1200) for fixture in range(1, bt1cg + 1)])
         elif machine_type == "GAP HIDDER":
-            self.machine_id_combo.addItems([str(fixture + 1300) for fixture in range(gap_hidder + 1)])
+            self.machine_id_combo.addItems([str(fixture + 1300) for fixture in range(1, gap_hidder + 1)])
         elif machine_type == "OTROS":
-            self.machine_id_combo.addItems([str(fixture + 1400) for fixture in range(otros + 1)])
+            self.machine_id_combo.addItems([str(fixture + 1400) for fixture in range(1, otros + 1)])
 
     def submit(self):
         machine_type = self.machine_type_combo.currentText()

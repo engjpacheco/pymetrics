@@ -1,7 +1,6 @@
 click==8.1.7
 colorama==0.4.6
 et-xmlfile==1.1.0
-NEURON==8.2.0
 PyQt5==5.15.9
 pyqt5-plugins==5.15.9.2.3
 PyQt5-Qt5==5.15.2
