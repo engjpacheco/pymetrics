@@ -1,34 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>mainForm</class>
+ <widget class="QDialog" name="mainForm">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>834</width>
-    <height>526</height>
+    <width>833</width>
+    <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Summit Planta Leon - Maintenance Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>resources/icon.jpg</normaloff>resources/icon.jpg</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">/* gruvbox_dark.qss */
+
+/* Importing Iosevka Nerd Font */
+@font-face {
+    font-family: 'Iosevka Nerd Font';
+    src: url('ui/fonts/IosevkaNerdFontMono-Regular.ttf');
+}
+
+* {
+    background-color: #282828;
+    color: #ebdbb2;
+    font-family: 'Iosevka Nerd Font', Arial, sans-serif;
+    font-size: 14px;
+}
+
+QWidget {
+    border: 1px solid #3c3836;
+}
+
+QMainWindow {
+    background-color: #282828;
+}
+
+QMenuBar {
+    background-color: #3c3836;
+    color: #ebdbb2;
+}
+
+QMenuBar::item {
+    background-color: #3c3836;
+    color: #ebdbb2;
+}
+
+QMenuBar::item:selected {
+    background-color: #504945;
+}
+
+QMenu {
+    background-color: #3c3836;
+    color: #ebdbb2;
+    border: 1px solid #3c3836;
+}
+
+QMenu::item:selected {
+    background-color: #504945;
+}
+
+QPushButton {
+    background-color: #504945;
+    border: 1px solid #665c54;
+    padding: 5px;
+    border-radius: 3px;
+    color: #ebdbb2;
+}
+
+QPushButton:hover {
+    background-color: #665c54;
+}
+
+QPushButton:pressed {
+    background-color: #7c6f64;
+}
+
+QLineEdit {
+    background-color: #3c3836;
+    border: 1px solid #665c54;
+    padding: 2px;
+    border-radius: 3px;
+    color: #ebdbb2;
+}
+
+QComboBox {
+    background-color: #3c3836;
+    border: 1px solid #665c54;
+    padding: 2px;
+    border-radius: 3px;
+    color: #ebdbb2;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #3c3836;
+    border: 1px solid #665c54;
+    selection-background-color: #504945;
+    color: #ebdbb2;
+}
+
+QSpinBox, QDoubleSpinBox {
+    background-color: #3c3836;
+    border: 1px solid #665c54;
+    padding: 2px;
+    border-radius: 3px;
+    color: #ebdbb2;
+}
+
+QLabel {
+    color: #ebdbb2;
+}
+
+QScrollBar:horizontal {
+    background-color: #3c3836;
+    height: 15px;
+}
+
+QScrollBar:vertical {
+    background-color: #3c3836;
+    width: 15px;
+}
+
+QScrollBar::handle {
+    background-color: #665c54;
+    border: 1px solid #504945;
+    border-radius: 3px;
+}
+
+QScrollBar::handle:hover {
+    background-color: #7c6f64;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+}</string>
   </property>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>80</y>
-     <width>81</width>
-     <height>31</height>
+     <x>410</x>
+     <y>400</y>
+     <width>231</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
+     <family>Iosevka Nerd Font</family>
+     <pointsize>-1</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -37,7 +161,7 @@
     <enum>Qt::RightToLeft</enum>
    </property>
    <property name="text">
-    <string>W.O. #:</string>
+    <string>Work Order # (si aplica)</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -51,8 +175,8 @@
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
+     <family>Iosevka Nerd Font</family>
+     <pointsize>-1</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -68,15 +192,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>440</y>
+     <y>400</y>
      <width>231</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
+     <family>Iosevka Nerd Font</family>
+     <pointsize>-1</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -92,15 +216,15 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>480</y>
+     <y>440</y>
      <width>221</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
+     <family>Iosevka Nerd Font</family>
+     <pointsize>-1</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -112,20 +236,26 @@
     <string> Tiempo Muerto:</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="textDescription">
    <property name="geometry">
     <rect>
      <x>160</x>
      <y>190</y>
-     <width>651</width>
+     <width>631</width>
      <height>191</height>
     </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>20</y>
      <width>441</width>
      <height>41</height>
@@ -133,8 +263,8 @@
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>16</pointsize>
+     <family>Iosevka Nerd Font</family>
+     <pointsize>-1</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -144,26 +274,6 @@
    </property>
    <property name="text">
     <string>BITACORA DE MANTENIMIENTO</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>440</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>480</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -182,8 +292,8 @@
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
-          <family>Arial</family>
-          <pointsize>12</pointsize>
+          <family>Iosevka Nerd Font</family>
+          <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -197,7 +307,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="cb_equipo"/>
+       <widget class="QComboBox" name="cb_machine"/>
       </item>
      </layout>
     </item>
@@ -207,8 +317,8 @@
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
-          <family>Arial</family>
-          <pointsize>12</pointsize>
+          <family>Iosevka Nerd Font</family>
+          <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -217,12 +327,12 @@
          <enum>Qt::RightToLeft</enum>
         </property>
         <property name="text">
-         <string>ID Number:</string>
+         <string>ID de Maquina:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox_2"/>
+       <widget class="QComboBox" name="cb_id"/>
       </item>
      </layout>
     </item>
@@ -232,8 +342,8 @@
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Arial</family>
-          <pointsize>12</pointsize>
+          <family>Iosevka Nerd Font</family>
+          <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -247,7 +357,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox_3"/>
+       <widget class="QComboBox" name="cb_tech"/>
       </item>
      </layout>
     </item>
@@ -257,8 +367,8 @@
        <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
-          <family>Arial</family>
-          <pointsize>12</pointsize>
+          <family>Iosevka Nerd Font</family>
+          <pointsize>-1</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -282,21 +392,24 @@
     </item>
    </layout>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="textWorkorder">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>110</y>
-     <width>101</width>
+     <x>470</x>
+     <y>430</y>
+     <width>111</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="lineWidth">
+    <number>3</number>
    </property>
   </widget>
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
      <x>710</x>
-     <y>460</y>
+     <y>420</y>
      <width>105</width>
      <height>56</height>
     </rect>
@@ -304,18 +417,58 @@
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pb_submit">
     <property name="text">
-     <string>Enviar a Bitacora</string>
+     <string>Enviar Datos</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pb_clear">
     <property name="text">
      <string>Borrar Datos</string>
     </property>
    </widget>
   </widget>
+  <widget class="QSpinBox" name="repairSpinbox">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>401</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="stepType">
+    <enum>QAbstractSpinBox::DefaultStepType</enum>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="downSpinbox">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>440</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <number>1000</number>
+   </property>
+   <property name="stepType">
+    <enum>QAbstractSpinBox::DefaultStepType</enum>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources/logo.qrc"/>
+ </resources>
  <connections/>
 </ui>

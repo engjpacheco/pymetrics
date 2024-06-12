@@ -1,0 +1,81 @@
+#+TITLE: Pymetrics
+#+AUTHOR: Javier Pacheco
+#+DESCRIPTION: Application to log maintenance activities and generate reports
+#+STARTUP: showeverything
+#+OPTIONS: toc:nil date:nil
+
+* Overview
+
+This application is a maintenance log that helps you track maintenance activities performed on various machines. It stores the following information for each maintenance activity:
+
+- Machine
+- Machine ID
+- Technician who performed the repair
+- Date of the repair
+- A brief description of the job
+- Repair time
+- Down time
+- Work order number
+
+The data is stored in a file named =maintenance_log.csv=, which can be used to create charts and reports in Excel using pivot tables.
+
+* Features
+
+1. *Logging Maintenance Activities*:
+   - Add entries for maintenance activities, capturing all relevant details.
+   - Store entries in a CSV file for easy access and analysis.
+
+2. *Data Analysis with Excel*:
+   - Import the =maintenance_log.csv= file into Excel.
+   - Use Excel pivot tables to analyze the data and create charts.
+
+* How to Use
+Download the executable file =pymetrics.exe=.
+
+1. *Launching the Application*:
+   - Run the Python script to start the application.
+   - The main form allows you to input maintenance activity details.
+
+2. *Entering Maintenance Details*:
+   - Fill in the details for each maintenance activity in the provided fields.
+   - Ensure all fields are correctly filled to maintain data integrity.
+
+3. *Saving Data*:
+   - Click the save button to log the activity into the =maintenance_log.csv= file.
+   - The data is appended to the CSV file, preserving all previous entries.
+
+4. *Analyzing Data in Excel*:
+   - Open Excel and import the =maintenance_log.csv= file.
+   - Use pivot tables to create charts and analyze the maintenance data.
+
+* Example Entry
+
+Here is an example of how an entry in the =maintenance_log.csv= file might look:
+
+| Machine | Machine ID | Technician |       Date | Description             | Repair Time | Down Time | Work Order Number |
+|---------+------------+------------+------------+-------------------------+-------------+-----------+-------------------|
+| IMM     |        101 | John Doe   | 2023-06-10 | Replaced hydraulic pump | 2 hours     | 3 hours   | WO12345           |
+
+* Installation and Setup (in order to going deep into the source code.)
+
+1. **Dependencies**:
+   - Ensure you have Python installed on your machine.
+   - Install the necessary Python packages using pip:
+     #+BEGIN_SRC sh
+     pip install -r requirements.txt
+     #+END_SRC
+
+2. **Running the Application**:
+   - Run the main application script to start logging maintenance activities.
+
+* File Structure
+
+- *app.py* :: The main script to run the application.
+- *maintenance_log.csv* :: The file where maintenance logs are stored.
+- ui/ :: Directory containing UI resources such as fonts and images.
+
+
+* License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
