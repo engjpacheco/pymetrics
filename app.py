@@ -1,14 +1,19 @@
 import sys, csv, os
-from PyQt5.QtWidgets import ( QApplication, QMainWindow, QMainWindow)
+from PyQt5.QtWidgets import ( QApplication, QMainWindow, QMainWindow, QMessageBox)
 from PyQt5.QtCore import QDate
 from PyQt5.uic import loadUi
 from variables import *
 from mainform import *
+from themes import dark_theme, light_theme
 
 class Window(QMainWindow, Ui_mainForm):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+
+        # Set initial theme to dark
+        self.current_theme = "dark"
+        self.setStyleSheet(dark_theme)
 
         #Machine type selector.
         self.cb_machine.addItems([str(equipment) for equipment in EQUIPMENT])
@@ -24,6 +29,8 @@ class Window(QMainWindow, Ui_mainForm):
         self.pb_submit.clicked.connect(self.submit)
         # Clear fields button
         self.pb_clear.clicked.connect(self.clear_fields)
+        # Toggle theme
+        self.pb_theme.clicked.connect(self.switch_theme)
 
 
     def update_cb_id(self):
@@ -85,6 +92,15 @@ class Window(QMainWindow, Ui_mainForm):
         self.dateEdit.setDate(QDate.currentDate())
         self.update_cb_id()
 
+    def switch_theme(self):
+        if self.current_theme == "dark":
+            self.setStyleSheet(light_theme)
+            self.pb_theme.setText("Toggle Theme")
+            self.current_theme = "light"
+        else:
+            self.setStyleSheet(dark_theme)
+            self.pb_theme.setText("Toggle Theme")
+            self.current_theme = "dark"
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
